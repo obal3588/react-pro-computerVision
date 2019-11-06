@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import * as style from "react-bootstrap";
 import $ from "jquery";
-import { Route, Link, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Route, Link, Switch, BrowserRouter as HashRouter } from "react-router-dom";
 import Home from "./pages/Home.js";
 import AboutMe from "./pages/AboutMe.js";
 import ComputerVison from "./pages/ComputerVision.js";
@@ -39,7 +39,7 @@ export class App extends Component {
 
   render() {
     return (
-      <Router>
+      <HashRouter basename="/">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav" id="mainBar">
@@ -87,7 +87,7 @@ export class App extends Component {
              )}/>
           <Route component={Errors} />
         </Switch>
-      </Router>
+        </HashRouter>
     );
   }
 }
