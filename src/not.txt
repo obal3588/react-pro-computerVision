@@ -1,0 +1,24 @@
+   sudo npm install @tensorflow-models/coco-ssd
+   sudo npm install @tensorflow/tfjs-converter
+   sudo npm install @tensorflow/tfjs-core
+   sudo npm install face-api.js
+   sudo npm install p5
+   sudo npm install react-p5-wrapper
+
+npx create-react-app pro-face
+
+   npm install react-bootstrap bootstrap
+   npm install react-router-dom
+   npm i axios
+
+   npm install jquery
+
+
+   $ npm install --save mdbreact
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
+
+
+Coco-ssd:used for other object detection like phone, wall, etc. around the face
+tfjs-converter:This convert TensorFlow saved models and keras models to be used by tensorflow.js directly.
