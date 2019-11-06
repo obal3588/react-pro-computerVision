@@ -28,14 +28,14 @@ export class FaceAPI extends Component {
         "hair,makeup,occlusion,accessories,blur,exposure,noise"
     };
     let obj;
-
+    let temparr=[];
 
     reader.onload = event => {
       console.log("ss", event);
       document.getElementById("imgx").src = event.target.result;
 
-      const postRec = new XMLHttpRequest();
-      const url =
+      var postRec = new XMLHttpRequest();
+      var url =
         "https://reconface.cognitiveservices.azure.com/face/v1.0/detect?" +
         $.param(params);
       postRec.open("POST", url, true);
@@ -52,17 +52,17 @@ export class FaceAPI extends Component {
            obj = JSON.parse(this.responseText);
          
 
-          const oleft = document.getElementById("imgx").offsetLeft;
-          const otop = document.getElementById("imgx").offsetTop;
-          const faceRec = document.createElement("div");
+          var oleft = document.getElementById("imgx").offsetLeft;
+          var otop = document.getElementById("imgx").offsetTop;
+          var faceRec = document.createElement("div");
 
-          const fc = document.getElementById("face");
-          const fet = document.getElementById("features");
+          var fc = document.getElementById("face");
+          var fet = document.getElementById("features");
 
           console.log(obj);
           obj.forEach(obj => {
-            const faceRec = document.createElement("div");
-            const points = document.createElement("span");
+            var faceRec = document.createElement("div");
+            var points = document.createElement("span");
             faceRec.style.left = oleft + obj.faceRectangle.left + "px";
             faceRec.style.top = otop + obj.faceRectangle.top + "px";
             faceRec.style.width = obj.faceRectangle.width + "px";
@@ -76,8 +76,7 @@ export class FaceAPI extends Component {
             points.style.top = otop + obj.faceLandmarks.eyeLeftBottom.x + "px";
             faceRec.append(points);
             fet.style.color = "black";
-           
- 
+     
          
 
           });
@@ -88,7 +87,7 @@ export class FaceAPI extends Component {
     };
 
     reader.readAsDataURL(event.target.files[0]);
-    temp.props.newImage({inf:obj, pic:event.target.files[0]});
+    temp.props.newImage(obj);
   };
 
   render() {
