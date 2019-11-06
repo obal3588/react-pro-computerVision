@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/react-pro-computerVision/static/css/main.b100e6da.chunk.css",
+    "main.js": "/react-pro-computerVision/static/js/main.35212d31.chunk.js",
+    "main.js.map": "/react-pro-computerVision/static/js/main.35212d31.chunk.js.map",
+    "runtime-main.js": "/react-pro-computerVision/static/js/runtime-main.b54fe9fb.js",
+    "runtime-main.js.map": "/react-pro-computerVision/static/js/runtime-main.b54fe9fb.js.map",
+    "static/css/2.3bf6dbfa.chunk.css": "/react-pro-computerVision/static/css/2.3bf6dbfa.chunk.css",
+    "static/js/2.37cb6591.chunk.js": "/react-pro-computerVision/static/js/2.37cb6591.chunk.js",
+    "static/js/2.37cb6591.chunk.js.map": "/react-pro-computerVision/static/js/2.37cb6591.chunk.js.map",
+    "index.html": "/react-pro-computerVision/index.html",
+    "precache-manifest.cab5578453bd0baa713b95a49f0b6a11.js": "/react-pro-computerVision/precache-manifest.cab5578453bd0baa713b95a49f0b6a11.js",
+    "service-worker.js": "/react-pro-computerVision/service-worker.js",
+    "static/css/2.3bf6dbfa.chunk.css.map": "/react-pro-computerVision/static/css/2.3bf6dbfa.chunk.css.map",
+    "static/css/main.b100e6da.chunk.css.map": "/react-pro-computerVision/static/css/main.b100e6da.chunk.css.map",
+    "static/media/mdb.css": "/react-pro-computerVision/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/all.min.css": "/react-pro-computerVision/static/media/fa-solid-900.c2801fb4.svg",
+    "static/media/logo.svg": "/react-pro-computerVision/static/media/logo.25bf045c.svg"
+  }
+}
