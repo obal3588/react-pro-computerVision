@@ -33,7 +33,8 @@ export class App extends Component {
     this.setState({
       images: [data, ...this.state.images]
     })
-    
+
+    console.log("newimag",this.state.images)
   };
 
   render() {
@@ -78,7 +79,12 @@ export class App extends Component {
             )}
           />
           <Route path="/computervision" component={ComputerVison} />
-          <Route path="/faceapi"  component={FaceAPI}/>
+          <Route path="/faceapi"  component={()=> (
+            <FaceAPI
+             newImage={this.newImage} 
+             images={this.state.images} 
+             />
+             )}/>
           <Route component={Errors} />
         </Switch>
       </Router>

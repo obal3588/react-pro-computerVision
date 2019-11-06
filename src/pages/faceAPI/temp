@@ -1,9 +1,10 @@
+
 import React, { Component } from 'react';
 import { div } from '@tensorflow/tfjs-core';
 import $ from "jquery";
 const CallAPI = props => {
 console.log("pr",props)
-const file =props;
+const file =props.file1 ;
     let subscriptionKey = "d56a00a55f9c44c9a0372880cfa969da";
     
     let uriBase ="https://reconface.cognitiveservices.azure.com/face/v1.0/detect";
@@ -31,7 +32,7 @@ const file =props;
         if (this.readyState == 4 && this.status == 200) { 
             var obj = JSON.parse(this.responseText)
             console.log(obj);
-          
+            
             var oleft = document.getElementById("imgx").offsetLeft -100; 
             var otop = document.getElementById("imgx").offsetTop -60; 
             var faceRec = document.createElement('div')
@@ -66,7 +67,7 @@ const file =props;
 
 }
 return(
-  {obj}
+  <div></div>
 )
 
 }
@@ -74,3 +75,47 @@ return(
 export default CallAPI;
 
 
+
+
+
+
+
+
+
+
+
+import React, { Component } from 'react'
+import Uploadfile from "./faceAPI/Uploadfile"
+import { Row, Col, Container, Form, Button, CardGroup } from "react-bootstrap";
+
+export class FaceAPI extends Component {
+
+    constructor(props){
+        super(props)
+    }
+
+
+    render() {
+        return (
+            <Container className="justify-content-right">
+            <Row>
+                <div id="upload">
+                <Uploadfile newImage={this.props.newImage} images={this.props.images}/>
+                </div>
+              
+            </Row>
+            <Row>
+                
+                <div id="getFaceDetails">
+                <img id="imgx" class="img-fluid" />
+                <div id="face"></div>
+                <ul id="features" class="collection"></ul>
+                </div>
+           
+            </Row>
+          </Container>
+        )
+    }
+}
+
+export default FaceAPI

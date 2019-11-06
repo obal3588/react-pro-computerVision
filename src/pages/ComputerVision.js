@@ -1,36 +1,37 @@
-import React from 'react'
+import React from "react";
 import $ from "jquery";
-import ComputerV from "./computerVision/ComputerV"
+import ComputerV from "./computerVision/ComputerV";
+import { Row, Col, Container, Form, Button, CardGroup } from "react-bootstrap";
+
 class ComputerVision extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
-      stopVideo:false
-    } 
+      stopVideo: false
+    };
   }
 
-  handleClick=(e)=>{
-
-    this.setState({
-      stopVideo: !this.state.stop
-    })
-    console.log("statew",this.state.stop);
-  }
-  
-  
   render() {
-      $("#Home").removeClass("active");
-      $("#AboutMe").removeClass("active");
-    $("#ComputerVision").addClass("active")
+    $("#Home").removeClass("active");
+    $("#AboutMe").removeClass("active");
+    $("#ComputerVision").addClass("active");
     return (
-    <div>
-    <h1>ComputerVision</h1>
-   
-    <button onClick={this.handleClick} >Start/Stop</button>
-     <ComputerV stopVideo ={this.state.stopVideo}/>
-    </div>
-      )
+      <Container>
+         <h1>ComputerVision</h1>{" "}
+        <Row>
+          <Col>
+            {" "}
+           
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <ComputerV stopVideo={this.state.stopVideo} />
+          </Col>
+        </Row>
+      </Container>
+    );
   }
 }
-export default ComputerVision
+export default ComputerVision;

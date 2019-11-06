@@ -7,8 +7,6 @@ const MODEL_URL = '/models'
 
 export default function sketch (p) {
 
-    
-
     let capture = null;
     let cocossdModel = null;
 
@@ -17,12 +15,10 @@ export default function sketch (p) {
 
 
     function showCocoSSDResults(results) {
-        console.log("res", results)
         cocoDrawings = results;
     }
 
     function showFaceDetectionData(data) {
-        console.log("data",data)
         faceDrawings = data;
     }
 
@@ -32,26 +28,25 @@ export default function sketch (p) {
         await faceapi.loadAgeGenderModel(MODEL_URL);
         await faceapi.loadFaceExpressionModel(MODEL_URL);
 
-        p.createCanvas(1280, 720);
+        p.createCanvas(1280/2, 720/2);
         const constraints = {
             video: {
               mandatory: {
-                minWidth: 1280,
-                minHeight: 720
+                minWidth: 1280/2,
+                minHeight: 720/2
               },
-            //   optional: [{ maxFrameRate: 200 }]
+              optional: [{ maxFrameRate: 80 }]
             },
             audio: false
           };
 
-        capture = p.createCapture(constraints, (stream) => {
-            console.log(stream);
+        capture = p.createCapture(constraints, () => {
         });
 
         
         capture.id("video_element");
-        capture.size(1280, 720);
-       // capture.hide();
+        capture.size(1280/2, 720/2);
+        capture.hide();
 
         cocoSsd.load().then((model) => {
             try {
@@ -76,7 +71,7 @@ export default function sketch (p) {
 
         cocoDrawings.map((drawing) => {
             if (drawing) {
-                p.textSize(20);
+                p.textSize(10);
                 p.strokeWeight(1);
                 const textX = drawing.bbox[0]+drawing.bbox[2];
                 const textY = drawing.bbox[1]+drawing.bbox[3];
@@ -85,12 +80,12 @@ export default function sketch (p) {
                 const textWidth = p.textWidth(confidenetext);
                 
                 const itemTextWidth = p.textWidth(drawing.class);
-                p.text(drawing.class, textX-itemTextWidth-10, textY-50);
+                p.text(drawing.class, textX-itemTextWidth-5, textY-40);
 
-                p.text(confidenetext, textX-textWidth-10, textY-10);
+                p.text(confidenetext, textX-textWidth-5, textY-5);
                 p.strokeWeight(4);
                 p.stroke('rgb(100%,100%,100%)');
-                p.rect(drawing.bbox[0], drawing.bbox[1], drawing.bbox[2], drawing.bbox[3]);
+                p.rect(drawing.bbox[0]/1.5, drawing.bbox[1]/1.5, drawing.bbox[2], drawing.bbox[3]);
             }
         });
 
@@ -142,7 +137,7 @@ export default function sketch (p) {
                 .detect(document.getElementById("video_element"))
                 .then(showCocoSSDResults)
                 .catch((e) => {
-                    console.log("Exception : ");
+                    console.log("Exception : ", e);
                 });
             }
         }
