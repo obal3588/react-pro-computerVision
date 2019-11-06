@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ba798c6a3c8d01df745ce5f47248d46f",
+    "revision": "29b804d0100d690608c0fc841c5f14c4",
     "url": "/react-pro-computerVision/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-pro-computerVision/static/css/2.3bf6dbfa.chunk.css"
   },
   {
-    "revision": "34772c5748ab2e19cc16",
+    "revision": "8ea2af84b798c1abd12a",
     "url": "/react-pro-computerVision/static/css/main.b100e6da.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-pro-computerVision/static/js/2.37cb6591.chunk.js"
   },
   {
-    "revision": "34772c5748ab2e19cc16",
-    "url": "/react-pro-computerVision/static/js/main.35212d31.chunk.js"
+    "revision": "8ea2af84b798c1abd12a",
+    "url": "/react-pro-computerVision/static/js/main.f32b361f.chunk.js"
   },
   {
     "revision": "9ffb1b5703d01d6e10ec",
