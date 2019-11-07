@@ -9,6 +9,7 @@ import AboutMe from "./pages/AboutMe.js";
 import ComputerVison from "./pages/ComputerVision.js";
 import Errors from "./pages/Errors.js";
 import FaceAPI from "./pages/FaceAPI"
+import ImageHistory from "./pages/faceAPI/ImageHistory"
 
 export class App extends Component {
   constructor(props) {
@@ -29,13 +30,40 @@ export class App extends Component {
 
 
   newImage = data => {
-    console.log(data);
+    console.log("aa",data);
     this.setState({
       images: [data, ...this.state.images]
     })
 
     console.log("newimag",this.state.images)
   };
+
+  clearComments = () => {
+    console.log("comment is clear")
+    this.setState({
+      comments: []
+    })
+
+    console.log("comment is clear")
+  };
+
+  clearImages = () => {
+    
+    this.setState({
+      images: []
+    })
+
+    console.log("comment is clear")
+  };
+
+  deleteComment=(index)=>{
+    console.log(index)
+    // this.setState({
+    //   comments: this.state.comments.splice(index,1)
+    // })
+    
+
+  }
 
   render() {
     return (
@@ -63,6 +91,13 @@ export class App extends Component {
               >
                 FaceAPI{" "}
               </Link>
+              <Link
+                to="/history"
+                className="nav-item nav-link "
+                id="history"
+              >
+                History{" "}
+              </Link>
             </div>
           </div>
         </nav>
@@ -75,6 +110,8 @@ export class App extends Component {
               <AboutMe
                 newComment={this.newComment}
                 commentsArr ={this.state.comments}
+                clearComments={this.clearComments}
+                deleteComment={this.deleteComment}
               />
             )}
           />
@@ -85,6 +122,14 @@ export class App extends Component {
              images={this.state.images} 
              />
              )}/>
+               <Route paht="/history" 
+               component={()=> (
+                <ImageHistory
+                 
+                 images={this.state.images} 
+                 clearImages={this.clearImages}
+                 />
+                 )}/>
           <Route component={Errors} />
         </Switch>
         </HashRouter>

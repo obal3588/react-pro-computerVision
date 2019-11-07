@@ -2,13 +2,18 @@ import React, { Component } from 'react'
 import Uploadfile from "./faceAPI/Uploadfile"
 import { Tabs,Tab,Row, Col, Container, Form, Button, CardGroup } from "react-bootstrap";
 import { MDBContainer, MDBTabPane, MDBTabContent, MDBNav, MDBNavItem, MDBNavLink } from "mdbreact";
-
+import ImageHistory from "./faceAPI/ImageHistory"
 export class FaceAPI extends Component {
 
     constructor(props){
-        super(props)
+        super(props);
     }
 
+
+    callAdd=(d)=>{
+        console.log("call")
+        this.props.newImage(d)
+    }
 
     render() {
         return (
@@ -17,7 +22,7 @@ export class FaceAPI extends Component {
             <Container className="justify-content-right">
             <Row>
                 <div id="upload">
-                <Uploadfile newImage={this.props.newImage} images={this.props.images}/>
+                <Uploadfile newImage={this.callAdd} images={this.props.images}/>
                 </div>
               
             </Row>
@@ -33,7 +38,7 @@ export class FaceAPI extends Component {
           </Container>
             </Tab>
             <Tab eventKey="profile" title="History">
-             a
+             {/* <ImageHistory list={this.props.images}/> */}
             </Tab>
             
           </Tabs>

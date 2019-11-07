@@ -56,7 +56,7 @@ const file =props;
                 points.style.top = otop + obj.faceLandmarks.eyeLeftBottom.x + 'px'
                 faceRec.append(points)
                 fet.style.color="black"
-                fet.innerHTML='<li class="collection-item" > <span class="badge">' + obj.faceAttributes.age + '</span>  Approximate Age: </li> <li class="collection-item"><span class="badge"> ' + obj.faceAttributes.gender +'</span> Gender: </li> <li class="collection-item"><span class="badge"> ' + obj.faceAttributes.glasses +'</span> Glasses: </li>' ; 
+                fet.innerHTML='<li > <span >' + obj.faceAttributes.age + '</span>  Approximate Age: </li> <li ><span > ' + obj.faceAttributes.gender +'</span> Gender: </li> <li ><span > ' + obj.faceAttributes.glasses +'</span> Glasses: </li>' ; 
                
         })
         }

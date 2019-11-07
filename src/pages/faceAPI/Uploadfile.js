@@ -50,7 +50,8 @@ export class FaceAPI extends Component {
       postRec.onreadystatechange = function(response) {
         if (this.readyState == 4 && this.status == 200) {
            obj = JSON.parse(this.responseText);
-         
+          
+          
 
           var oleft = document.getElementById("imgx").offsetLeft;
           var otop = document.getElementById("imgx").offsetTop;
@@ -76,6 +77,7 @@ export class FaceAPI extends Component {
             points.style.top = otop + obj.faceLandmarks.eyeLeftBottom.x + "px";
             faceRec.append(points);
             fet.style.color = "black";
+            temparr.push([obj.faceId ,obj.faceAttributes.gender ,obj.faceAttributes.age])
      
          
 
@@ -87,7 +89,7 @@ export class FaceAPI extends Component {
     };
 
     reader.readAsDataURL(event.target.files[0]);
-    temp.props.newImage(obj);
+    temp.props.newImage(temparr);
   };
 
   render() {

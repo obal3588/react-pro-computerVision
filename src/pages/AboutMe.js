@@ -10,8 +10,10 @@ class AboutMe extends React.Component {
     $("#ComputerVision").removeClass("active");
     $("#AboutMe").addClass("active");
     const allComments = this.props.commentsArr.map((comment, index) => {
-      return <CommentsList card={comment} key={index} />;
+      return (<CommentsList card={comment} index={index} deleteComment={this.props.deleteComment}/>
+        );
     });
+  
 
     return (
       <Container>
@@ -28,6 +30,7 @@ class AboutMe extends React.Component {
         <Row>
           <Col md={{ span: 4, offset: 8 }}>
             <CardGroup>{allComments}</CardGroup>
+            <Button variant="outline-primary" onClick={this.props.clearComments}>Delete All</Button>
           </Col>
         </Row>
       </Container>
